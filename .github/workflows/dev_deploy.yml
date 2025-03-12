@@ -1,0 +1,17 @@
+name: "Sample Dev deployment"
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    environment: dev
+    name: "Deploy bundle"
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out this repo, so that this workflow can access it.
+      - uses: actions/checkout@v4.2.1
